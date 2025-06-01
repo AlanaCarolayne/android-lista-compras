@@ -25,6 +25,22 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/nome_do_produto"
         android:inputType="text"/>
+    <EditText
+        android:id="@+id/quantText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/quantidade_do_produto"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/precoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/preco_do_produto"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/button"

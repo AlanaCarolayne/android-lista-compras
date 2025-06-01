@@ -10,5 +10,8 @@ data class ItemModel(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val name: String
+    val name: String,
+    val quantidade:Int = 0,
+    val preco:Double = 0.0
+
 )

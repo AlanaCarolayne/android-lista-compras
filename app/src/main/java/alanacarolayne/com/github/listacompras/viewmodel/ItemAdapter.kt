@@ -7,6 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import alanacarolayne.com.github.listacompras.R
 import alanacarolayne.com.github.listacompras.model.ItemModel
+import android.widget.NumberPicker
+import kotlin.math.roundToInt
+
 class ItemAdapter(private val onItemRemoved: (ItemModel) -> Unit) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
@@ -15,11 +18,15 @@ class ItemAdapter(private val onItemRemoved: (ItemModel) -> Unit) :
 
     inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView = view.findViewById<TextView>(R.id.textViewItem)
+        val numberPickerItemQuant = view.findViewById<NumberPicker>(R.id.numberPickerItemQuant)
+        val numberPickerPreco = view.findViewById<NumberPicker>(R.id.numberPickerPreco)
         val button = view.findViewById<ImageButton>(R.id.imageButton)
 
 
         fun bind(item: ItemModel) {
             textView.text = item.name
+            numberPickerItemQuant.value = item.quantidade
+            numberPickerPreco.value = item.preco.roundToInt()
             button.setOnClickListener {
                 onItemRemoved(item)
             }
